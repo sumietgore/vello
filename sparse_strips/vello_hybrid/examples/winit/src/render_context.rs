@@ -189,8 +189,8 @@ impl RenderContext {
                 .ok()?;
 
         let limits = Limits {
-            max_texture_dimension_1d: 4096,
-            max_texture_dimension_2d: 4096,
+            max_texture_dimension_1d: 8192,
+            max_texture_dimension_2d: 8192,
             max_color_attachments:4,
             ..Limits::downlevel_defaults()
         };
