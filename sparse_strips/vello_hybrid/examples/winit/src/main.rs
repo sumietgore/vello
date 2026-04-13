@@ -380,13 +380,13 @@ impl App<'_> {
                 });
 
         // 1st example — uploading pixmap directly
-        let pixmap1 = ImageScene::read_flower_image();
-        self.renderers[device_id].as_mut().unwrap().upload_image(
-            &device_handle.device,
-            &device_handle.queue,
-            &mut encoder,
-            &pixmap1,
-        );
+        // let pixmap1 = ImageScene::read_flower_image();
+        // self.renderers[device_id].as_mut().unwrap().upload_image(
+        //     &device_handle.device,
+        //     &device_handle.queue,
+        //     &mut encoder,
+        //     &pixmap1,
+        // );
 
         // 2nd example — uploading from a texture (for cases where you already have a texture)
         let pixmap2 = ImageScene::read_cowboy_image();
