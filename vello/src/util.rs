@@ -163,6 +163,8 @@ impl RenderContext {
                 .ok()?;
         let features = adapter.features();
 
+        let limits1 = Limits::default();
+
         let limits = Limits::downlevel_defaults();
 
         let limits = Limits {
@@ -170,6 +172,7 @@ impl RenderContext {
             max_storage_textures_per_shader_stage: 4,
             max_texture_dimension_2d: 4096,
             max_texture_dimension_1d: 4096,
+            max_color_attachments: 4,
             ..limits
         };
         let maybe_features = wgpu::Features::CLEAR_TEXTURE | wgpu::Features::PIPELINE_CACHE;

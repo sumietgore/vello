@@ -187,7 +187,12 @@ impl RenderContext {
             wgpu::util::initialize_adapter_from_env_or_default(&self.instance, compatible_surface)
                 .await
                 .ok()?;
-        let limits = Limits::default();
+        let limits = Limits {
+            max_texture_dimension_1d: 4096,
+            max_texture_dimension_2d: 4096,
+            max_color_attachments:4,
+            ..Limits::downlevel_defaults()
+        };
 
         let (device, queue) = adapter
             .request_device(&wgpu::DeviceDescriptor {
